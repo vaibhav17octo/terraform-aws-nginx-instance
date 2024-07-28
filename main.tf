@@ -2,10 +2,6 @@ data "aws_vpc" "default" {
   default = true
 } 
 
-data "template_file" "user_data" {
-    template = file("${abspath(path.module)}/userdata.txt")
-}
-
 resource "tls_private_key" "example" {
   algorithm = "RSA"
   rsa_bits  = 4096
